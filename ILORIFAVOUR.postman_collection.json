@@ -1,0 +1,523 @@
+{
+	"info": {
+		"_postman_id": "3eae71a4-4d1b-406d-905e-af4084eaa608",
+		"name": "ILORIFAVOUR",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"item": [
+				{
+					"name": "single user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://reqres.in/api/user/2",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"user",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://reqres.in/api/user?page=2",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"user"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all employee data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base url}}employees",
+							"host": [
+								"{{base url}}employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a single employee ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base url}}employee/3",
+							"host": [
+								"{{base url}}employee"
+							],
+							"path": [
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "check wrong status code",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e47639f7-cd5c-4f08-9f8c-97ba92eefb52",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201\r",
+									");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://docs.postman-echo.com/",
+							"protocol": "https",
+							"host": [
+								"docs",
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "check url status ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://docs.postman-echo.com/",
+							"protocol": "https",
+							"host": [
+								"docs",
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get blog post",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f98ac865-dfea-4c13-9740-f94bcc876c26",
+								"exec": [
+									"pm.variables.get(\"My first blog post :\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_URL}}",
+							"host": [
+								"{{base_URL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get blog post",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f2123077-7246-4da8-8067-dd193f21d0fa",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"/assets/css/bootstrap.min.css\");\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", funtion () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_URL}}",
+							"host": [
+								"{{base_URL}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "POST",
+			"item": [
+				{
+					"name": "creat new record in database",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base url}}create",
+							"host": [
+								"{{base url}}create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"eve.holt@reqres.in\",\n\t\"password\":\"cityslicka\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://reqres.in/api/login",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "creat user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"morpheus\",\n\t\"job\": \"leader\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://reqres.in/api/users",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register new user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "af3b53fe-3ab5-4460-8497-a60979a1b60d",
+								"exec": [
+									"\r",
+									"postman.setEnvironmemtVariable(\"header_server\", pm.response.header.get(\"server\"));\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"eve.holt@reqres.in\",\r\n    \"password\": \"pistol\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://reqres.in/api/register/",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"register",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "json blog end point",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3aaf0c27-33d9-406f-8afd-f3feff20280f",
+								"exec": [
+									"\r",
+									"    postman.setEnvironmentVariable(\"header_server\", pm.response.headers.get('Server'));\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"eve.holt@reqres.in\",\r\n    \"password\": \"pistol\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://reqres.in/api/register",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "PUT",
+			"item": [
+				{
+					"name": "update an employee record",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base url}}update/21",
+							"host": [
+								"{{base url}}update"
+							],
+							"path": [
+								"21"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "DELETE",
+			"item": [
+				{
+					"name": "delete an employee record",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base url}}delete/2",
+							"host": [
+								"{{base url}}delete"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete a user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://reqres.in/api/user/2",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"user",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{base_URL}}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0025269b-7510-4e98-b90e-bd383a034acc",
+								"exec": [
+									"// Test 1: Confirm the ststus code is 200\r",
+									"pm.test(\"ststus code is 404\", function () {  \r",
+									"    pm.response.to.have.status(404);\r",
+									"})\r",
+									"\r",
+									"//Test 2: confirm the code string is \"OK\"\r",
+									"pm.test(\"Status code name has Not found string\", function () {\r",
+									"    pm.response.to.have.status(\"Not found\");\r",
+									"});\r",
+									"\r",
+									"//Test 3: Comfirm the response time is not more than 5 mins    \r",
+									"pm.test(\"Response time is less than 300000ms\",funtion () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(3000000);\r",
+									"});\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"eve.holt@reqres.in\",\r\n    \"password\": \"pistol\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_URL}}",
+							"host": [
+								"{{base_URL}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
